@@ -9,8 +9,9 @@ class CalcRepair:
         self.colour = ColorRepair(colour)
 
     def calc_cost(self):
-        return round(self.BASIC_COST * DetailRepair.get_multiplier(self.detail.detail) * self.colour.get_multiplier())
 
-# Пример использования
+        return round(self.BASIC_COST * self.detail.get_multiplier() * ColorRepair.get_multiplier(self.colour.colour))
+
+
 calc = CalcRepair('Крыша', 'Желтый')
 print(calc.calc_cost())
